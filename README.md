@@ -27,7 +27,3 @@ Você pode personalizar o estilo do carimbo ajustando as propriedades CSS dentro
 
 - Este gerador de carimbo foi desenvolvido com fins educacionais e não foi otimizado para uso em produção.
 - Certifique-se de que você tenha permissão para utilizar as informações do CNPJ, respeitando as leis de privacidade e proteção de dados em vigor em sua região.
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
