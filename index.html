@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Gerador de Carimbo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+	<div class="m-5 border-3">
+		<form>
+			<h1>Gerador de Carimbo</h1>
+			<div class="row mb-2">
+				<div class="col-2">
+					<label class="form-label" for="cnpj">CNPJ:</label>
+					<input class="form-control" type="text" id="cnpj" name="cnpj" required value="16.798.391/0001-71">
+				</div>
+				<div class="col-2">
+					<label class="form-label" for="codigo-atividade">Cód. de Atividade:</label>
+					<input class="form-control" type="text" id="codigo-atividade" name="codigo-atividade"
+						value="92.02-5-02">
+				</div>
+				<div class="col-8">
+					<label class="form-label" for="razao-social">Razão Social:</label>
+					<input class="form-control" type="text" id="razao-social" name="razao-social" required value="LUCILEIDE DE OLIVEIRA CAVALCANTE 433.667.753-00">
+				</div>
+			</div>
+			<div class="row mb-2">				
+				<div class="col-2">
+					<label class="form-label" for="tipo">Tipo:</label>
+					<select id="tipo" name="tipo" class="form-select" required>
+						<option value=""></option>
+						<option value="AEROPORTO">AEROPORTO</option>
+						<option value="ALAMEDA">ALAMEDA</option>
+						<option value="ÁREA">ÁREA</option>
+						<option value="AVENIDA">AVENIDA</option>														
+						<option value="CAMPO">CAMPO</option>
+						<option value="CHÁCARA">CHÁCARA</option>
+						<option value="COLÔNIA">COLÔNIA</option>
+						<option value="CONDOMÍNIO">CONDOMÍNIO</option>
+						<option value="CONJUNTO">CONJUNTO</option>
+						<option value="DISTRITO">DISTRITO</option>
+						<option value="ESPLANADA">ESPLANADA</option>
+						<option value="ESTAÇÃO">ESTAÇÃO</option>
+						<option value="ESTRADA">ESTRADA</option>
+						<option value="FAVELA">FAVELA</option>
+						<option value="FAZENDA">FAZENDA</option>
+						<option value="FEIRA">FEIRA</option>
+						<option value="JARDIM">JARDIM</option>
+						<option value="LADEIRA">LADEIRA</option>
+						<option value="LAGO">LAGO</option>
+						<option value="LAGOA">LAGOA</option>
+						<option value="LARGO">LARGO</option>
+						<option value="LOTEAMENTO">LOTEAMENTO</option>
+						<option value="MORRO">MORRO</option>
+						<option value="NÚCLEO">NÚCLEO</option>
+						<option value="PARQUE">PARQUE</option>
+						<option value="PASSARELA">PASSARELA</option>
+						<option value="PÁTIO">PÁTIO</option>
+						<option value="PRAÇA">PRAÇA</option>
+						<option value="QUADRA">QUADRA</option>
+						<option value="RECANTO">RECANTO</option>
+						<option value="RESIDENCIAL">RESIDENCIAL</option>
+						<option value="RODOVIA">RODOVIA</option>
+						<option value="RUA" selected>RUA</option>
+						<option value="SETOR">SETOR</option>
+						<option value="SÍTIO">SÍTIO</option>
+						<option value="TRAVESSA">TRAVESSA</option>
+						<option value="TRECHO">TRECHO</option>
+						<option value="TREVO">TREVO</option>
+						<option value="VALE">VALE</option>
+						<option value="VEREDA">VEREDA</option>
+						<option value="VIA">VIA</option>
+						<option value="VIADUTO">VIADUTO</option>
+						<option value="VIELA">VIELA</option>
+						<option value="VILA">VILA</option>
+					</select>
+				</div>
+				<div class="col-4">
+					<label class="form-label" for="lougradouro">Lougradouro:</label>
+					<input class="form-control" type="text" id="lougradouro" name="lougradouro" required value="ALTAMIRA QUINTINHO">
+				</div>
+				<div class="col-1">
+					<label class="form-label" for="numero">Número:</label>
+					<input class="form-control" type="text" id="numero" name="numero" required value="63">
+				</div>
+				<div class="col-2">
+					<label class="form-label" for="cep">CEP:</label>
+					<input class="form-control" type="text" id="cep" name="cep" required value="60.732-500">
+				</div>
+				<div class="col-3">
+					<label class="form-label" for="bairro">Bairro:</label>
+					<input class="form-control" type="text" id="bairro" name="bairro" required value="SIQUEIRA">
+				</div>
+			</div>
+			<div class="row mb-2">
+				<div class="col-3">
+					<label class="form-label" for="cidade">Cidade:</label>
+					<input class="form-control" type="text" id="cidade" name="cidade" required value="FORTALEZA">
+				</div>
+				<div class="col-3">
+					<label class="form-label" for="uf">UF:</label>
+					<input class="form-control" type="text" id="uf" name="uf" required value="CE">
+				</div>
+			</div>
+			<div class="row mb-2 hrz-center">
+				<button type="submit" class="btn btn-primary">Gerar Carimbo</button>
+			</div>
+
+		</form>
+		<hr>
+	</div>
+
+	<div id="result">
+		<div id="stamp" class="stamp m-5">
+			<div id="stamp-content" class="stamp-content"></div>
+			<div id="blank-square-a"></div>
+		</div>
+
+		<button type="button" class="btn btn-primary" id="stamp-download" hidden>Baixar Carimbo</button>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>

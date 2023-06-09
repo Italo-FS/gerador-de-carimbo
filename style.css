@@ -1,0 +1,66 @@
+#result {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.stamp {
+	border: 6px solid black;
+	display: inline-block;
+	margin: 25px auto;
+	padding: 25px;
+	position: relative;
+	width: auto;
+}
+
+.stamp-content {
+	display: flex;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	z-index: 5;
+	flex-direction: column;
+	align-items: center;
+	font-family: "Arial",Arial,sans-serif;
+
+	& p {
+		margin: 1px;
+	}
+}
+
+.stamp::before,
+.stamp::after {
+	content: '';
+	position: absolute;
+	background: white;
+}
+
+.stamp::before {
+	width: calc(100% + 50px + 12px - 120px);
+	height: calc(100% + 12px);
+	top: -6px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+
+}
+
+.stamp::after {
+	height: calc(100% + 50px + 12px - 120px);
+	width: calc(100% + 12px);
+	left: -6px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+}
+
+.btn {
+	width: auto;
+}
+
+.hrz-center {
+	display: flex;
+    justify-content: center;
+}
